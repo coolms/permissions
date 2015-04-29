@@ -1,0 +1,39 @@
+{
+  "name" : "coolms/permissions",
+  "description" : "CoolMS2 Permissions Module",
+  "version" : "0.1.0",
+  "type" : "library",
+  "keywords" : [ "zf2", "coolms", "coolms2", "permissions" ],
+  "homepage" : "https://github.com/coolms/permissions",
+  "license" : "BSD-3-Clause",
+  "authors" : [ {
+    "name" : "Dmitry Popov",
+    "email" : "d.popov@altgraphic.com",
+    "role" : "Developer"
+  } ],
+  "require" : {
+    "php" : ">=5.4.0",
+    "coolms/common" : "dev-master@dev"
+  },
+  "require-dev" : {
+    "phpunit/phpunit" : "~4.5"
+  },
+  "suggest": {
+    "coolms/authentication" : "coolms/authentication for using authentication service"
+  },
+  "autoload" : {
+    "psr-4" : { "CmsPermissions\\" : "src/" }
+  },
+  "autoload-dev" : {
+    "psr-4" : { "CmsPermissionsTest\\" : "tests/" }
+  },
+  "extra" : {
+    "branch-alias" : {
+      "dev-master" : "0.1.x-dev"
+    }
+  },
+  "repositories" : [ {
+    "type" : "vcs",
+    "url" : "https://www.github.com/coolms/common"
+  } ]
+}
