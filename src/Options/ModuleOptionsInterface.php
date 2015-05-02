@@ -65,19 +65,19 @@ interface ModuleOptionsInterface
     public function getRoleProviders();
 
     /**
-     * Set role model class name.
+     * Set role entity class name.
      *
      * @param string $className
      * @return self
      */
-    public function setRoleClass($className);
+    public function setRoleEntityClass($className);
 
     /**
-     * Retrieves role model class name.
+     * Retrieves role entity class name.
      *
      * @return string
      */
-    public function getRoleClass();
+    public function getRoleEntityClass();
 
     /**
      * @param array $options

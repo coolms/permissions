@@ -52,12 +52,12 @@ class ModuleOptions extends AbstractOptions implements ModuleOptionsInterface
     protected $roleProviders = [];
 
     /**
-     * Role model class name (if using the
+     * Role entity class name (if using the
      * 'CmsPermissions\Role\AbstractMapperProvider' role provider)
      *
      * @var string
      */
-    protected $roleClass;
+    protected $roleEntityClass;
 
     /**
      * Cache options have to be compatible with {@see \Zend\Cache\StorageFactory::factory}
@@ -151,18 +151,18 @@ class ModuleOptions extends AbstractOptions implements ModuleOptionsInterface
     /**
      * {@inheritDoc}
      */
-    public function setRoleClass($className)
+    public function setRoleEntityClass($className)
     {
-        $this->roleClass = (string) $className;
+        $this->roleEntityClass = (string) $className;
         return $this;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getRoleClass()
+    public function getRoleEntityClass()
     {
-        return $this->roleClass;
+        return $this->roleEntityClass;
     }
 
     /**
