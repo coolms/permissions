@@ -12,7 +12,9 @@ namespace CmsPermissions\Factory;
 
 use Zend\ServiceManager\FactoryInterface,
     Zend\ServiceManager\ServiceLocatorInterface,
-    Zend\Cache\StorageFactory;
+    Zend\Cache\StorageFactory,
+    CmsPermissions\Options\ModuleOptionsInterface,
+    CmsPermissions\Options\ModuleOptions;
 
 /**
  * Factory for building the cache storage
@@ -28,9 +30,8 @@ class CacheFactory implements FactoryInterface
      */
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
-        /* @var $options \CmsPermissions\Options\ModuleOptions */
-        $options = $serviceLocator->get('CmsPermissions\\Options\\ModuleOptions');
-
+        /* @var $options ModuleOptionsInterface */
+        $options = $serviceLocator->get(ModuleOptions::class);
         return StorageFactory::factory($options->getCacheOptions());
     }
 }

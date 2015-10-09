@@ -11,7 +11,9 @@
 namespace CmsPermissions\Factory;
 
 use Zend\ServiceManager\FactoryInterface,
-    Zend\ServiceManager\ServiceLocatorInterface;
+    Zend\ServiceManager\ServiceLocatorInterface,
+    CmsPermissions\Options\ModuleOptionsInterface,
+    CmsPermissions\Options\ModuleOptions;
 
 /**
  * Factory responsible of building {@see \CmsPermissions\Identity\ProviderInterface}
@@ -27,8 +29,8 @@ class IdentityProviderFactory implements FactoryInterface
      */
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
-        /* @var $options \CmsPermissions\Options\ModuleOptionsInterface */
-        $options = $serviceLocator->get('CmsPermissions\\Options\\ModuleOptions');
+        /* @var $options ModuleOptionsInterface */
+        $options = $serviceLocator->get(ModuleOptions::class);
         $identityProvider = $options->getIdentityProvider();
 
         if ($serviceLocator->has($identityProvider)) {

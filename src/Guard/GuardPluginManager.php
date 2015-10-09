@@ -30,8 +30,9 @@ class GuardPluginManager extends AbstractPluginManager
         if (! $plugin instanceof GuardInterface) {
             throw new InvalidArgumentException(
                 sprintf(
-                    'Plugin of type %s is invalid; must implement CmsPermissions\Guard\GuardInterface',
-                    (is_object($plugin) ? get_class($plugin) : gettype($plugin))
+                    'Plugin of type %s is invalid; must implement %s',
+                    (is_object($plugin) ? get_class($plugin) : gettype($plugin)),
+                    GuardInterface::class
                 )
             );
         }
